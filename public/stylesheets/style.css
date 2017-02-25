@@ -48,3 +48,23 @@ nav .nav-wrapper {
   background: #0097a7 !important;
   float: right;
 }
+
+.calendar li {
+  display: inline-block;
+  float: left;
+  width: 14.285%;
+}
+.calendar li div {
+  margin: 5px auto;
+  height: 100px;
+  width: 100px;
+  background: #bababa;
+  border-radius: 50%;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+.calendar li.completed div {
+  background: #94d9ab;
+}

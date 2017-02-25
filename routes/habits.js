@@ -10,7 +10,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const daysArray = [...Array(parseInt(req.body.duration))].map((e,i)=>{
-    return {completed: false};
+    const random = Math.random();
+    const setTrue = random > .5;
+    return {completed: setTrue};
   })
   new Habit({
     habitName: req.body.habitName,

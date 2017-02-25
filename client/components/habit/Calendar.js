@@ -3,8 +3,9 @@ import React from 'react';
 class Calendar extends React.Component {
   state = { days: [...this.props.habit.days] }
 
-  toggleCompletion = () => {
-    console.log("blah");
+  toggleCompletion = (i) => {
+
+    // this.setState({ days[i].completed: !this.state.days[i].completed })
   }
 
   render() {
