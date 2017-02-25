@@ -23,7 +23,7 @@ class HabitListItem extends React.Component {
                 <a className="btn-floating btn-med waves-effect waves-light red">
                 <i className="material-icons">&#xE86C;</i></a>
           </div>
-          <div className="name">
+          <div className="name" onClick={this.props.toggleView}>
             {this.props.habit.habitName}
           </div>
           <div className="buttonArea2">

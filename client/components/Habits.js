@@ -5,7 +5,7 @@ class Habits extends React.Component {
   render() {
     const habitList = this.props.habitListItems.map( habit => {
       return (
-        <HabitListItem updateList={this.props.updateList} habit={habit} key={habit._id} />
+        <HabitListItem updateList={this.props.updateList} toggleView={this.props.toggleView} habit={habit} key={habit._id} />
       )
     })
 

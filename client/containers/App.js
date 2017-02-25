@@ -4,7 +4,7 @@ import MainForm from '../components/MainForm';
 import Habits from '../components/Habits';
 
 class App extends React.Component {
-  state = { habits: [] };
+  state = { habits: [], detailsView: false };
 
   componentDidMount() {
     this.updateList();
@@ -19,15 +19,24 @@ class App extends React.Component {
     });
   }
 
+  toggleView = () => {
+    this.setState({
+      detailsView: !this.state.detailsView
+    });
+  }
+
   render() {
     return (
       <div>
         <Nav />
-        <div className="container">
+        {!this.state.detailsView && <div className="container">
           <h1>Main Habit Page</h1>
           <MainForm updateList={this.updateList} />
-          <Habits updateList={this.updateList} habitListItems={this.state.habits} />
-        </div>
+          <Habits updateList={this.updateList} toggleView={this.toggleView} habitListItems={this.state.habits} />
+        </div>}
+        {this.state.detailsView && <div>
+          <button onClick={this.toggleView}>Stats here</button>
+        </div>}
       </div>
     );
   }
