@@ -9,6 +9,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  const daysArray = [...Array(parseInt(req.body.duration))].map((e,i)=>{
+    return {completed: false};
+  })
   new Habit({
     habitName: req.body.habitName,
     habitDesc: req.body.habitDesc,
@@ -16,6 +19,7 @@ router.post('/', (req, res) => {
     category: req.body.category,
     startDate: req.body.startDate,
     duration: req.body.duration,
+    days: daysArray
   }).save( (err, habit) => {
     res.json(habit);
   });

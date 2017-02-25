@@ -3,7 +3,7 @@ import React from 'react';
 class MainForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { habitName: '', habitDesc: '', frequency: '', category: '', duration: 0 };
+    this.state = { habitName: '', habitDesc: '', frequency: '', category: '', duration: 0, days: [] };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

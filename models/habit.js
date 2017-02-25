@@ -7,7 +7,8 @@ const Habit = new Schema({
   frequency: { type: String, required: true },
   category: { type: String, required: true},
   startDate: { type: Date },
-  duration: { type: Number, required: true}
+  duration: { type: Number, required: true},
+  days: { type: Array }
 });
 
 module.exports = mongoose.model( 'Habit', Habit );

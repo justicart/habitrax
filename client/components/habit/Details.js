@@ -1,4 +1,5 @@
 import React from 'react';
+import Calendar from './Calendar';
 
 class Details extends React.Component {
    render() {
@@ -10,12 +11,12 @@ class Details extends React.Component {
 
           <h1>{habitName}</h1>
           <h4> Category: {category}</h4>
-          
+
           <p>START DATE: {startDate}</p>
 
          <p>You are tracking this habit for {duration} days.</p>
 
-
+         <Calendar habit={this.props.habit} />
        </div>
      );
    }
