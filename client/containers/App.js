@@ -47,7 +47,7 @@ class App extends React.Component {
         </div>}
         {this.state.detailsView && <div>
           <Details toggleView={this.toggleView} habit={this.state.habit} />
-          {this.state.habit.habitName}
+          
         </div>}
       </div>
     );
