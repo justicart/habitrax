@@ -3,26 +3,26 @@ import React from 'react';
 class MainForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: ''};
+    this.state = { habitName: '', frequency: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({[event.target.name]: event.target.value});
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("A name was submitted: " + this.state.value)
+    alert(`A name was submitted: ${this.state.habitName} - ${this.state.frequency}`)
 
     $.ajax({
       url: '/habits',
       type: 'POST',
-      data: { this.state }
+      data: this.state
     }).done( habit => {
       // this.setState({ habitListItems: [...this.state.habitListItems, habit] });
       console.warn("Added")
@@ -43,7 +43,7 @@ class MainForm extends React.Component {
         <p>Goal Form (Temporary Title)</p>
         <form onSubmit={this.handleSubmit}>
           What is your goal?
-          <input type="text" id="habitNameInput" name="habitName" value={this.state.value}onChange={this.handleChange} required />
+          <input type="text" id="habitNameInput" name="habitName" value={this.state.value} onChange={this.handleChange} />
           How will you achieve it?
           <input type="text" name="habitDesc" />
           How often? <br />
@@ -52,17 +52,17 @@ class MainForm extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  <input className="with-gap" name="frequency" type="radio" id="daily" required />
+                  <input className="with-gap" name="frequency" type="radio" id="daily" value="daily" onChange={this.handleChange} />
                   <label htmlFor="daily">Daily</label>
                 </td>
 
               <td>
-                <input className="with-gap" name="frequency" type="radio" id="weekly"  />
+                <input className="with-gap" name="frequency" type="radio" id="weekly" value="weekly" onChange={this.handleChange} />
                 <label htmlFor="weekly">Weekly</label>
               </td>
 
               <td>
-                <input className="with-gap" name="frequency" type="radio" id="monthly"  />
+                <input className="with-gap" name="frequency" type="radio" id="monthly" value="monthy" onChange={this.handleChange} />
                 <label htmlFor="monthly">Monthly</label>
               </td>
               </tr>
@@ -71,12 +71,12 @@ class MainForm extends React.Component {
 
               <tr>
                 <td><h5>Start Date</h5>
-                 <input type="date" className="datepicker" required />
+                 <input type="date" className="datepicker" />
 
                 </td>
 
                 <td><h5>End Date</h5>
-                <input type="date" className="datepicker" required />
+                <input type="date" className="datepicker" />
                 </td>
 
               </tr>
@@ -87,7 +87,7 @@ class MainForm extends React.Component {
 
               <tr>
                 <td>
-                  <input className="with-gap" name="category" type="radio" id="personal" required/>
+                  <input className="with-gap" name="category" type="radio" id="personal"/>
                   <label htmlFor="personal">Personal</label>
                 </td>
 
