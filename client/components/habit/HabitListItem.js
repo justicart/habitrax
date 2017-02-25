@@ -2,10 +2,10 @@ import React from 'react';
 
 class HabitListItem extends React.Component {
   render() {
-    let { id, name } = this.props.habit;
+    let { _id, habitName } = this.props.habit;
     return (
       <li>
-        <div className="name">{name}</div>
+        <div className="name">{habitName}</div>
       </li>
     );
   }

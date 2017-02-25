@@ -9,8 +9,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log("Creating new habit")
   new Habit({
-    name: req.body.name
+    habitName: req.body.habitName,
+    frequency: req.body.frequency
   }).save( (err, habit) => {
     res.json(habit);
   });
