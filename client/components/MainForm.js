@@ -31,10 +31,17 @@ class MainForm extends React.Component {
               </td>
               </tr>
 
+              
 
               <tr>
-                <td>Start Date</td>
-                <td>End Date</td>
+                <td><h5>Start Date</h5>
+                 <input type="date" className="datepicker" />
+
+                </td>
+
+                <td><h5>End Date</h5>
+                <input type="date" className="datepicker" />
+                </td>
 
               </tr>
 
