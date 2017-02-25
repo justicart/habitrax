@@ -10,7 +10,7 @@ class HabitListItem extends React.Component {
   }
 
   render() {
-    let { _id, habitName, frequency, category } = this.props.habit;
+    let { _id, habitName, habitDesc, frequency, category, startDate, duration } = this.props.habit;
     return (
 
         <li>

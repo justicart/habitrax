@@ -3,7 +3,7 @@ import React from 'react';
 class MainForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { habitName: '', frequency: '', category: ''};
+    this.state = { habitName: '', habitDesc: '', frequency: '', category: '', duration: 0 };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -98,15 +98,16 @@ class MainForm extends React.Component {
                  <input
                    type="date"
                    className="datepicker"
+                   name="startDate"
                    onChange={this.handleChange}
                  />
 
                 </td>
 
-                <td><h5>End Date</h5>
+                <td><h5>Days</h5>
                 <input
-                  type="date"
-                  className="datepicker"
+                  type="text"
+                  name="duration"
                   onChange={this.handleChange}
                 />
                 </td>
