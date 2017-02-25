@@ -1,11 +1,20 @@
 import React from 'react';
 
 class MainForm extends React.Component {
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Hi! This is preventing the default submit of the form.");
+  }
+
   render() {
+    
+
+
     return (
       <div>
         <p>Goal Form (Temporary Title)</p>
-        <form action="#">
+        <form onSubmit={this.handleSubmit}>
           What is your goal?
           <input type="text" name="habitName" />
           How will you achieve it?
@@ -31,7 +40,7 @@ class MainForm extends React.Component {
               </td>
               </tr>
 
-              
+
 
               <tr>
                 <td><h5>Start Date</h5>
