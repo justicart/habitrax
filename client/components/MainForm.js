@@ -1,14 +1,30 @@
 import React from 'react';
 
 class MainForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
 
   handleSubmit = (e) => {
     e.preventDefault();
-    alert("Hi! This is preventing the default submit of the form.");
+    alert("A name was submitted: " + this.state.value)
   }
 
+  /*this.setState( {
+    name: {habitNameInput.value}
+  })*/
+
   render() {
-    
+
 
 
     return (
@@ -16,7 +32,7 @@ class MainForm extends React.Component {
         <p>Goal Form (Temporary Title)</p>
         <form onSubmit={this.handleSubmit}>
           What is your goal?
-          <input type="text" name="habitName" />
+          <input type="text" id="habitNameInput" name="habitName" value={this.state.value}onChange={this.handleChange} required />
           How will you achieve it?
           <input type="text" name="habitDesc" />
           How often? <br />
@@ -25,7 +41,7 @@ class MainForm extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  <input className="with-gap" name="frequency" type="radio" id="daily"  />
+                  <input className="with-gap" name="frequency" type="radio" id="daily" required />
                   <label htmlFor="daily">Daily</label>
                 </td>
 
@@ -44,12 +60,12 @@ class MainForm extends React.Component {
 
               <tr>
                 <td><h5>Start Date</h5>
-                 <input type="date" className="datepicker" />
+                 <input type="date" className="datepicker" required />
 
                 </td>
 
                 <td><h5>End Date</h5>
-                <input type="date" className="datepicker" />
+                <input type="date" className="datepicker" required />
                 </td>
 
               </tr>
@@ -60,7 +76,7 @@ class MainForm extends React.Component {
 
               <tr>
                 <td>
-                  <input className="with-gap" name="category" type="radio" id="personal" />
+                  <input className="with-gap" name="category" type="radio" id="personal" required/>
                   <label htmlFor="personal">Personal</label>
                 </td>
 
