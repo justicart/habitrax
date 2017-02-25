@@ -4,15 +4,29 @@ import MainForm from '../components/MainForm';
 import Habits from '../components/Habits';
 
 class App extends React.Component {
+  state = { habits: [] };
+
+  componentDidMount() {
+    this.updateList();
+  }
+
+  updateList = () => {
+    $.ajax({
+      url: '/habits',
+      type: 'GET'
+    }).done( habits => {
+      this.setState({ habits });
+    });
+  }
+
   render() {
-    const habitListItems = [{id: 1, name: "First"}, {id: 2, name: "Second"}, {id: 3, name: "Hello"}];
     return (
       <div>
         <Nav />
         <div className="container">
           <h1>Main Habit Page</h1>
-          <MainForm />
-          <Habits habitListItems={habitListItems} />
+          <MainForm updateList={this.updateList} />
+          <Habits updateList={this.updateList} habitListItems={this.state.habits} />
         </div>
       </div>
     );
