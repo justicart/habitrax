@@ -1,14 +1,11 @@
 import React from 'react';
+import HabitListItem from './habit/HabitListItem';
 
 class Habits extends React.Component {
   render() {
-    const habitListItems = [{name: "First"}, {name: "Second"}]
-
-    const habitList = habitListItems.map( habit => {
+    const habitList = this.props.habitListItems.map( habit => {
       return (
-        <li>
-          <div className="name">{habit.name}</div>
-        </li>
+        <HabitListItem habit={habit} key={habit.id} />
       )
     })
 
