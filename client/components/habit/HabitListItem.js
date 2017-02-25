@@ -14,7 +14,7 @@ class HabitListItem extends React.Component {
     return (
 
         <li>
-          <div class="row">
+          <div className="row">
 
           <div className="card">
             <div className="buttonArea">
@@ -23,7 +23,7 @@ class HabitListItem extends React.Component {
                 <a className="btn-floating btn-med waves-effect waves-light red">
                 <i className="material-icons">&#xE86C;</i></a>
           </div>
-          <div className="name" onClick={this.props.toggleView}>
+          <div className="name" onClick={() => this.props.toggleView(_id)}>
             {this.props.habit.habitName}
           </div>
           <div className="buttonArea2">

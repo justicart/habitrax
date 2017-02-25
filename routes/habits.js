@@ -45,7 +45,7 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Habit.findById(req.params.id, (err, habit) => {
-    res.render('habit', { habit })
+    res.json(habit);
   })
 });
 
