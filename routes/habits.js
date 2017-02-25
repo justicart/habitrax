@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log("Creating new habit")
   new Habit({
     habitName: req.body.habitName,
-    frequency: req.body.frequency
+    frequency: req.body.frequency,
+    category: req.body.category
   }).save( (err, habit) => {
     res.json(habit);
   });
@@ -29,19 +29,19 @@ router.put('/:id', ( req, res ) => {
     });
 });
 
-// router.delete('/:id', (req, res) => {
-//   let habitId = req.params.id;
-//   Habit.findById(habitId, (err, habit) => {
-//     habit.remove();
-//     List.find({ habitId }, (err, lists) => {
-//       lists.forEach( list => {
-//         Card.find({'listId': list._id}).remove().exec();
-//         list.remove()
-//       } );
-//     });
-//     res.status(200).send({success: true});
-//   });
-// });
+router.delete('/:id', (req, res) => {
+  let habitId = req.params.id;
+  Habit.findById(habitId, (err, habit) => {
+    habit.remove();
+    // List.find({ habitId }, (err, lists) => {
+    //   lists.forEach( list => {
+    //     Card.find({'listId': list._id}).remove().exec();
+    //     list.remove()
+    //   } );
+    // });
+    res.status(200).send({success: true});
+  });
+});
 
 router.get('/:id', (req, res) => {
   Habit.findById(req.params.id, (err, habit) => {

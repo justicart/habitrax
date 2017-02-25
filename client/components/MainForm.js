@@ -3,7 +3,7 @@ import React from 'react';
 class MainForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { habitName: '', frequency: ''};
+    this.state = { habitName: '', frequency: '', category: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,6 +21,7 @@ class MainForm extends React.Component {
       type: 'POST',
       data: this.state
     }).done( habit => {
+      this.props.updateList();
       document.getElementById('habitForm').reset();
     });
 

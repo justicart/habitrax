@@ -7,6 +7,10 @@ class App extends React.Component {
   state = { habits: [] };
 
   componentDidMount() {
+    this.updateList();
+  }
+
+  updateList = () => {
     $.ajax({
       url: '/habits',
       type: 'GET'
@@ -21,8 +25,8 @@ class App extends React.Component {
         <Nav />
         <div className="container">
           <h1>Main Habit Page</h1>
-          <MainForm />
-          <Habits habitListItems={this.state.habits} />
+          <MainForm updateList={this.updateList} />
+          <Habits updateList={this.updateList} habitListItems={this.state.habits} />
         </div>
       </div>
     );
