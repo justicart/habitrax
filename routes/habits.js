@@ -11,8 +11,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   new Habit({
     habitName: req.body.habitName,
+    habitDesc: req.body.habitDesc,
     frequency: req.body.frequency,
-    category: req.body.category
+    category: req.body.category,
+    startDate: req.body.startDate,
+    duration: req.body.duration,
   }).save( (err, habit) => {
     res.json(habit);
   });
@@ -45,7 +48,7 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Habit.findById(req.params.id, (err, habit) => {
-    res.render('habit', { habit })
+    res.json(habit);
   })
 });
 
