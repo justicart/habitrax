@@ -6,3 +6,15 @@ a {
   padding-top: 15px;
   padding-left: 15px;
 }
+
+nav .nav-wrapper {
+  background-color: #0097a7;
+}
+
+.side-nav {
+  background-color: #0097a7 !important;
+}
+
+.side-nav a {
+  color: #FFF !important;
+}
