@@ -19,34 +19,54 @@ nav .nav-wrapper {
   color: #FFF !important;
 }
 
-.card {
-  border: 1px solid black;
-  margin-bottom: 10px;
-  display: block;
-  contain: layout;
+.cardParent li {
+  margin: 0;
+  padding: 0;
 }
 
-.name{
+.cardParent li h4{
+  margin: 30px 0;
+}
 
-  }
+.card {
+  display: inline-block;
+}
+
+.category {
+  background: #0097a7;
+  border: 1px solid #000;
+  height: 100px;
+}
+
+
+.material-icons{
+  font-size: 50px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.btn-floating.btn-large{
+  height: 60px !important;
+  width: 60px  !important;
+}
 
 .buttonArea {
   background: #fff;
-  float: left;
-  padding: 5px;
+  float: right;
+  padding: 17px;
+  border: 1px solid #000;
+  height: 100px;
 }
-
 
 .btn-floating {
-  margin: 5px;
-}
-.buttonArea button{
-  border: 0;
+  margin: 16px 11px 11px 11px;
+  padding: 10px;
 }
 
-.buttonArea2 {
-  background: #0097a7 !important;
-  float: right;
+btn.trash:hover {
+  background: red;
 }
 
 .calendar li {

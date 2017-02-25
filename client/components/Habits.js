@@ -11,7 +11,7 @@ class Habits extends React.Component {
 
     return (
       <div>
-        <ul>
+        <ul className="cardParent">
           { habitList }
         </ul>
       </div>
