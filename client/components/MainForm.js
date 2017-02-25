@@ -4,11 +4,18 @@ class MainForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    alert("Hi! This is preventing the default submit of the form.");
+    $.ajax({
+      url: '/habits',
+      type: 'POST',
+      data: { habitName }
+    }).done( habit => {
+      // this.setState({ habitListItems: [...this.state.habitListItems, habit] });
+      console.warn("Added")
+    });
   }
 
   render() {
-    
+
 
 
     return (
