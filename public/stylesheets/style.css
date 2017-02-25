@@ -18,3 +18,33 @@ nav .nav-wrapper {
 .side-nav a {
   color: #FFF !important;
 }
+
+.card {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  display: block;
+  contain: layout;
+}
+
+.name{
+
+  }
+
+.buttonArea {
+  background: #fff;
+  float: left;
+  padding: 5px;
+}
+
+
+.btn-floating {
+  margin: 5px;
+}
+.buttonArea button{
+  border: 0;
+}
+
+.buttonArea2 {
+  background: #0097a7 !important;
+  float: right;
+}
