@@ -13,25 +13,28 @@ class HabitListItem extends React.Component {
     let { _id, habitName, frequency, category } = this.props.habit;
     return (
 
-        <li>
-          <div class="row">
+        <li className="displayList">
 
-          <div className="card">
-            <div className="buttonArea">
-                <a className="btn-floating btn-med red" onClick={() => this.removeHabit(_id)}>
-                <i className="material-icons">&#xE92B;</i></a>
-                <a className="btn-floating btn-med waves-effect waves-light red">
-                <i className="material-icons">&#xE86C;</i></a>
-          </div>
-          <div className="name" onClick={this.props.toggleView}>
-            {this.props.habit.habitName}
-          </div>
-          <div className="buttonArea2">
-          <button>EDIT</button>
-          </div>
+          <div className="row">
+
+          <div className="card col m12">
+
+              <div className="col s9 m9 category">
+              <div className="name" onClick={this.props.toggleView}>
+                <h4>{this.props.habit.habitName}</h4>
+              </div>
+              </div>
+
+              <div className="col s3 m3 buttonArea">
+                  <a className="btn-floating btn-large waves-effect waves-light red trash" onClick={() => this.removeHabit(_id)}>
+                  <i className="material-icons md-48">&#xE92B;</i></a>
+                  <a className="btn-floating btn-large waves-effect waves-light teal done">
+                  <i className="material-icons md-48">&#xE86C;</i></a>
+                  <a className="btn-floating btn-large waves-effect waves-light green edit">
+                  <i className="material-icons md-48">&#xE254;</i></a>
+            </div>
         </div>
         </div>
-
 
       </li>
     );
