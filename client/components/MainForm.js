@@ -16,7 +16,18 @@ class MainForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     alert("A name was submitted: " + this.state.value)
+
+    $.ajax({
+      url: '/habits',
+      type: 'POST',
+      data: { this.state }
+    }).done( habit => {
+      // this.setState({ habitListItems: [...this.state.habitListItems, habit] });
+      console.warn("Added")
+    });
+
   }
 
   /*this.setState( {

@@ -10,6 +10,7 @@ mongoose.connect( 'mongodb://localhost/habitrax' );
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var habits = require('./routes/habits');
 var app = express();
 
 // view engine setup
@@ -27,6 +28,7 @@ app.use('/materialize', express.static(__dirname + '/node_modules/materialize-cs
 app.use('/jquery', express.static(__dirname + '/node_modules/materialize-css/node_modules/jquery/dist/'));
 app.use('/', index);
 app.use('/users', users);
+app.use('/habits', habits);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
