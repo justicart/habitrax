@@ -18,8 +18,8 @@ class HabitListItem extends React.Component {
 
           <div className="card col m12">
 
-              <div className="col s9 m9 category">
-              <div className="name" onClick={this.props.toggleView(_id)}>
+              <div className={`col s9 m9 category ${category}`}>
+              <div className="name" onClick={() => this.props.toggleView(_id)}>
                 <h4>{this.props.habit.habitName}</h4>
               </div>
               </div>

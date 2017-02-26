@@ -7,6 +7,10 @@ a {
   padding-left: 15px;
 }
 
+.name {
+  color: white;
+}
+
 nav .nav-wrapper {
   background-color: #0097a7;
 }
@@ -36,6 +40,15 @@ nav .nav-wrapper {
   background: #0097a7;
   border: 1px solid #000;
   height: 100px;
+}
+.career {
+  background: #f76bce;
+}
+.education {
+  background: #ffab33;
+}
+.money {
+  background: #7fca78;
 }
 
 

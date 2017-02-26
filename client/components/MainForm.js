@@ -49,11 +49,11 @@ class MainForm extends React.Component {
           />
           How will you achieve it?
           <input type="text" name="habitDesc" />
-          How often? <br />
+          {/* How often? <br /> */}
 
           <table>
             <tbody>
-              <tr>
+              {/* <tr>
                 <td>
                   <input
                     className="with-gap"
@@ -89,7 +89,7 @@ class MainForm extends React.Component {
                 />
                 <label htmlFor="monthly">Monthly</label>
               </td>
-              </tr>
+              </tr> */}
 
 
 

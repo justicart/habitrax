@@ -11,7 +11,7 @@ class Calendar extends React.Component {
   render() {
     const days = this.props.habit.days.map( (day, index) => {
       return (
-        <li className={day.completed ? 'completed' : ''}>
+        <li className={day.completed ? 'completed' : ''} key={index}>
           <div onClick={this.toggleCompletion(index)}>{ index + 1 }</div>
         </li>
       )

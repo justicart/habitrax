@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Habit = new Schema({
   habitName: { type: String, required: true },
   habitDesc: { type: String },
-  frequency: { type: String, required: true },
+  frequency: { type: String },
   category: { type: String, required: true},
   startDate: { type: Date },
   duration: { type: Number, required: true},

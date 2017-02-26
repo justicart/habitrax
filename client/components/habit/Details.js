@@ -10,6 +10,7 @@ class Details extends React.Component {
          <button onClick={this.props.toggleView}>Back</button>
 
           <h1>{habitName}</h1>
+          {/* <h4> Action: {habitDesc}</h4> */}
           <h4> Category: {category}</h4>
 
           <p>START DATE: {startDate}</p>
